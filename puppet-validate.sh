@@ -26,6 +26,7 @@ pp_tests() {
   # Test the .pp files for syntax errors
   echo "===> Testing the syntax of puppet manifests"
   for file in `find $PUPPET_DIR -type f -name "*.pp"`; do 
+    echo "=====> Checking $file"
     puppet parser validate $file || exit 1;
   done
 }
@@ -34,6 +35,7 @@ erb_tests() {
   # Test the .erb template files for syntax errors
   echo "===> Testing the syntax of puppet templates"
   for file in `find $PUPPET_DIR -type f -name *.erb`; do 
+    echo "=====> Checking $file"
     erb -x -T '-' $file | ruby -c > /dev/null || exit 1;
   done
 }
