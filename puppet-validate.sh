@@ -1,9 +1,7 @@
 #!/bin/bash
 #
-# Test all Puppet files for syntax errors before deploying
-# Written by mig5 October 2011
-#
-# http://mig5.net
+#Modified from https://github.com/mig5/scripts/blob/master/puppet/puppet-test
+#by Joe McWilliams me@joemcwilliams.com
 
 PUPPET_DIR=$1
 
